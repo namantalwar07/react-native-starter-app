@@ -194,7 +194,7 @@ Safe console output capturing
 
 🚀 Getting Started
 1️⃣ Clone
-git clone https://github.com/YOUR_USERNAME/react-native-starter-app.git
+git clone https://github.com/namantalwar07/react-native-starter-app.git
 cd react-native-starter-app
 2️⃣ Install Dependencies
 npm install
