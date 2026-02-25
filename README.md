@@ -9,246 +9,234 @@ This project extends the original hackathon starter template with:
 - Learning History
 
 
-🚀 Code Learning Assistant
 
-An AI-Powered React Native App for Learning Programming Smarter
+---
 
-A full-featured AI coding assistant built with React Native + On-Device LLM (RunAnywhere) that helps users:
+# 🚀 Code Learning Assistant
 
-🐛 Explain errors (Simple & Technical mode)
+### On-Device AI Powered Coding Companion (React Native)
 
-💡 Learn step-by-step using Hint Mode
+An advanced **on-device AI coding assistant** built with React Native and RunAnywhere SDK.
+The app helps developers understand errors, solve problems step-by-step, execute code, and interact with AI — all **without requiring internet access**.
 
-💬 Chat with contextual memory
+---
 
-⚡ Run JavaScript & Python code
+## 📱 Features
 
-🎤 Use voice input
+### 🐛 Error Explainer
 
-🔊 Listen to AI explanations
+* Paste programming errors
+* Choose between **Simple** or **Technical** explanations
+* Supports multiple programming languages
+* Voice input support
+* Text-to-Speech explanation playback
+* Saves explanations to learning history
 
-📚 Track learning history & progress
+---
 
-📱 Features
-🐛 Error Explainer
+### 💡 Hint Mode (Step-by-Step Learning)
 
-Paste any programming error
+* Guided 4-step hint system:
 
-Choose:
+  1. Strategy Hint
+  2. Pseudocode
+  3. Partial Code
+  4. Full Solution
+* Locked progression (no skipping)
+* Visual progress bar
+* "Try This Code" button to open solution in Playground
+* Saves completed sessions to history
 
-👶 Simple explanation (Beginner-friendly)
+---
 
-🔧 Technical explanation (Detailed analysis)
+### 💬 Smart Chat
 
-Syntax-highlighted code responses
+* Context-aware AI chat
+* Continue from Error Explainer or Hint Mode
+* Code block detection & syntax highlighting
+* Voice input support
+* Fully on-device inference
 
-Voice input support
+---
 
-Text-to-Speech output
+### ⚡ Code Playground
 
-Saves explanations to history
+* JavaScript execution engine (safe sandboxed execution)
+* Python execution support (via native module)
+* Sample code templates
+* Output console with execution time
+* Error handling display
 
-💡 Hint Mode (Step-by-Step Learning)
+---
 
-Structured 4-step learning approach:
+### 📚 Learning History
 
-💡 Strategy Hint
+* Stores all:
 
-📝 Pseudocode
+  * Error explanations
+  * Hint sessions
+  * AI interactions
+* Displays:
 
-💻 Partial Code
+  * Total queries
+  * Errors explained
+  * Problems solved
+  * Common topics
+* Tap to view full details
+* Delete individual items
+* Pull-to-refresh support
 
-✅ Full Solution
+---
 
-✔ Cannot skip steps
-✔ Progress bar tracking
-✔ “Try This Code” button
-✔ Save completed solutions
+## 🔥 On-Device AI Advantages
 
-⚡ Code Playground
+This app demonstrates the power of **on-device AI**:
 
-Supports:
+* ✅ No internet required
+* ✅ Zero API cost
+* ✅ Low latency responses
+* ✅ Complete data privacy
+* ✅ Secure local execution
+* ✅ Works offline
 
-JavaScript execution (safe sandbox)
+All AI inference runs locally using the RunAnywhere SDK.
 
-Python execution (native bridge ready)
+---
 
-Console output capture
+## 🛠 Tech Stack
 
-Execution time tracking
-
-Sample programs
-
-Error handling
-
-Clear & Run controls
-
-💬 Smart Chat
-
-Context-aware AI chat
-
-Continues from:
-
-Error explanations
-
-Hint mode
-
-Supports code formatting
-
-Syntax highlighting
-
-Voice input
-
-🎤 Voice & TTS
-
-Speech-to-text input
-
-Text-to-speech explanation playback
-
-Hands-free learning experience
-
-📚 Learning History
-
-Tracks:
-
-Errors explained
-
-Hints completed
-
-Solutions viewed
-
-View full past responses
-
-Delete entries
-
-Pull-to-refresh
-
-Statistics overview
-
-🛠 Tech Stack
-Frontend
-
-React Native (CLI)
-
-TypeScript
-
-React Navigation (Bottom Tabs)
-
-Custom Hooks Architecture
-
-AI & LLM
-
-RunAnywhere (On-device LLM inference)
-
-Streaming token responses
-
-Context-based conversation system
-
-Code Rendering
-
-react-native-syntax-highlighter
-
-Custom code parser
-
-Copy-to-clipboard
-
-Native Features
-
-Microphone (react-native-live-audio-stream)
-
-Clipboard API
-
-Native module bridge (ExecutionEngine)
-
-Android native integration
-
-🏗 Architecture
+* React Native (TypeScript)
+* RunAnywhere SDK (On-device LLM)
+* React Navigation (Stack + Tabs)
+* Native Modules (Python execution)
+* Custom Code Parser for code block detection
+* Syntax Highlighting
+* Voice Input (Audio Streaming)
+* Text-to-Speech
+* Safe JavaScript Execution Engine
+
+---
+
+## 🧠 Architecture Overview
+
+```
+User Input
+   ↓
+On-Device LLM (RunAnywhere)
+   ↓
+Response Parser (Code Block Detection)
+   ↓
+UI Rendering (FormattedResponse + CodeBlock)
+   ↓
+Optional: Run in Playground
+```
+
+All processing happens locally on device.
+
+---
+
+## 📂 Project Structure
+
+```
 src/
  ├── components/
+ │    ├── CodeBlock.tsx
+ │    ├── FormattedResponse.tsx
+ │    ├── VoiceButton.tsx
+ │    └── SpeakerButton.tsx
+ │
  ├── screens/
+ │    ├── ErrorExplainerScreen.tsx
+ │    ├── HintModeScreen.tsx
+ │    ├── SmartChatScreen.tsx
+ │    ├── CodePlaygroundScreen.tsx
+ │    └── LearningHistoryScreen.tsx
+ │
  ├── hooks/
  ├── services/
- ├── navigation/
+ │    └── ExecutionEngine.ts
+ │
  ├── utils/
- └── types/
+ └── navigation/
+```
 
-Modular design:
+---
 
-Hooks handle business logic
+## 🚀 How to Run
 
-Screens handle UI
+### 1️⃣ Install dependencies
 
-Services manage execution + AI
-
-Components are reusable
-
-🔐 Safety Features
-
-JavaScript execution sandbox
-
-Dangerous pattern detection
-
-Timeout protection (5s max execution)
-
-Safe console output capturing
-
-🚀 Getting Started
-1️⃣ Clone
-git clone https://github.com/namantalwar07/react-native-starter-app.git
-cd react-native-starter-app
-2️⃣ Install Dependencies
+```
 npm install
-3️⃣ Clean Android Build (Recommended)
+```
+
+### 2️⃣ Clean Android build
+
+```
 cd android
 ./gradlew clean
 cd ..
-4️⃣ Run App
+```
+
+### 3️⃣ Run the app
+
+```
 npx react-native run-android
-📈 Why This Project Matters
+```
+
+Make sure emulator or device is running.
+
+---
+
+## 📈 Why This Project Matters
 
 This project demonstrates:
 
-Real-world React Native architecture
+* Real-world React Native architecture
+* AI integration in mobile apps
+* Native module integration
+* Code execution sandboxing
+* Streaming LLM responses
+* TypeScript usage
+* Complex state management
+* UX-focused learning design
 
-AI integration in mobile apps
+## 🎯 Use Case
 
-Native module integration
+This app helps:
 
-Code execution sandboxing
+* Beginner programmers understand errors clearly
+* Students learn step-by-step problem solving
+* Developers test logic instantly
+* Learners practice without internet dependency
 
-Streaming LLM responses
+Perfect for:
 
-TypeScript usage
+* Offline learning
+* Low connectivity areas
+* Privacy-sensitive environments
+* Cost-efficient AI solutions
 
-Complex state management
+---
 
-UX-focused learning design
+## 📌 Hackathon Focus
 
-🎯 Ideal Use Cases
+Built as a fully on-device AI coding assistant demonstrating:
 
-Coding beginners
+* Privacy-first AI
+* Zero cloud dependency
+* Real-time local inference
+* Offline developer tooling
 
-Interview preparation
+---
+## Future Improvements
 
-Debugging practice
-
-Self-paced learning
-
-AI-assisted development
-
-🧠 Future Improvements
-
-Monaco editor integration
-
-Cloud execution environment
-
-Multi-language expansion
-
-User authentication
-
-Cloud sync history
-
-iOS Python execution
+* Monaco editor integration
+* Cloud execution environment
+* Multi-language expansion
+* User authentication
+* Cloud sync history
+* iOS Python execution
 
 👨‍💻 Authors
 BUG SLAYERS
